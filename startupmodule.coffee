@@ -20,7 +20,7 @@ startupmodule.initialize = () ->
 startupmodule.serviceStartup = ->
     log "startupmodule.serviceStartup"
     sci.prepareAndExpose()
-    kraken.startObservation()
+    # kraken.startObservation()
     return
 
 export default startupmodule
