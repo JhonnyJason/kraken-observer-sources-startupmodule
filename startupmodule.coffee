@@ -1,26 +1,23 @@
-
-startupmodule = {name: "startupmodule"}
 ############################################################
-log = (arg) ->
-    if allModules.debugmodule.modulesToDebug["startupmodule"]?  then console.log "[startupmodule]: " + arg
-    return
+#region debug
+import { createLogFunctions } from "thingy-debug"
+{log, olog} = createLogFunctions("startupmodule")
+#endregion
 
 ############################################################
 sci = null
 kraken = null
 
 ############################################################
-startupmodule.initialize = () ->
-    log "startupmodule.initialize"
+export initialize = () ->
+    log "initialize"
     sci = allModules.scimodule
     kraken = allModules.krakenobservermodule
     return
 
 ############################################################
-startupmodule.serviceStartup = ->
-    log "startupmodule.serviceStartup"
+export serviceStartup = ->
+    log "serviceStartup"
     sci.prepareAndExpose()
-    kraken.startObservation()
+    # kraken.startObservation()
     return
-
-export default startupmodule
