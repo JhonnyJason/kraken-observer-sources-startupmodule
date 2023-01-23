@@ -19,5 +19,5 @@ export initialize = () ->
 export serviceStartup = ->
     log "serviceStartup"
     sci.prepareAndExpose()
-    # kraken.startObservation()
+    kraken.startObservation()
     return
