@@ -5,15 +5,8 @@ import { createLogFunctions } from "thingy-debug"
 #endregion
 
 ############################################################
-sci = null
-kraken = null
-
-############################################################
-export initialize = () ->
-    log "initialize"
-    sci = allModules.scimodule
-    kraken = allModules.krakenobservermodule
-    return
+import * as sci from "./scimodule.js"
+import * as kraken from "./krakenobservermodule.js"
 
 ############################################################
 export serviceStartup = ->
