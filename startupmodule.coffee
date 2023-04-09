@@ -11,6 +11,7 @@ import * as kraken from "./krakenobservermodule.js"
 ############################################################
 export serviceStartup = ->
     log "serviceStartup"
-    sci.prepareAndExpose()
+    # sci.prepareAndExpose()
     # kraken.startObservation()
+    allModules.aesmodule.runAllTests()
     return
